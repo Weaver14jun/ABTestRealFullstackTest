@@ -25,11 +25,6 @@ namespace FullStackTest.Services
         public async Task<List<User>> Send()
         {
             var tempUsers = await _context.Users.ToListAsync();
-            foreach(var user in tempUsers)
-            {
-                user.RegistrationDate = user.RegistrationDate.Date;
-                user.LastActivityDate = user.LastActivityDate.Date;
-            }
             return tempUsers;
         }
 
